@@ -9,15 +9,13 @@ module.exports = (config) => {
     return shell.exit(1);
   }
   const spinner = ora('download template...').start();
-  // shell.exec('clear')
+  shell.exec('clear')
 
-  // 仓库名称 gihub  用户名 nxl3477  项目名称 my-react-ts-cli
-  download('https://github.com:nxl3477/my-vue-cli#master', config.name, function (err) {
+  // 仓库名称 gihub  用户名 nxl3477  项目名称 my-vue-app
+  download('https://github.com:nxl3477/my-vue-cli#master', config.name, { clone: true }, function (err) {
     if( err ) {
-      // spinner.succeed(` vue-app: error`)
-      return console.log(err)
+      return  spinner.warn(`vue-app 构建失败, 失败原因: ${err}`)
     }
-    console.log(123123)
     // 获取当前命令行执行的路径
     const curPath = process.cwd()
     const packagePath = path.join( curPath, config.name, 'package.json' )

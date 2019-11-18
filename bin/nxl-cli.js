@@ -7,12 +7,13 @@ const chalk = require('chalk')
 const inquirer = require('inquirer');
 
 
-
 program.on('--help', () => { 
   console.log('  目前支持命令:  ')
+  console.log(chalk.yellow('    # 创建vue脚手架项目'))
+  console.log('    $ nxl-tools create vue-app')
   console.log()
-  console.log(chalk.yellow('    # 创建脚手架项目'))
-  console.log('    $ nxl-tools init react-ts-app')
+  console.log(chalk.yellow('    # 创建react脚手架项目'))
+  console.log('    $ nxl-tools create react-ts-app')
   console.log()
   console.log(chalk.yellow('    # 其他'))
   console.log('    $ nxl-tools')

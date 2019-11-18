@@ -12,7 +12,7 @@ module.exports = (config) => {
   shell.exec('clear')
 
   // 仓库名称 gihub  用户名 nxl3477  项目名称 my-react-ts-cli
-  download('https://github.com:nxl3477/my-react-ts-cli#master', config.name, function (err) {
+  download('https://github.com:nxl3477/my-react-ts-cli#master', config.name, { clone: true }, function (err) {
     if( err ) {
       return console.log(err)
     }
