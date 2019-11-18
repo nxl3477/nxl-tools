@@ -7,7 +7,7 @@ const imageminPngquant = require('imagemin-pngquant');
 (async () => {
     const imagePath = process.cwd()
     const spinner = ora('正在压缩中...').start();
-    const files = await imagemin([`${imagePath}/*.{jpg,png}`], {
+    const files = await imagemin([`${imagePath}/*.{jpg,png,gif}`], {
       destination: 'zip',
       plugins: [
         imageminJpegtran(),
